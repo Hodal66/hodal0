@@ -14,14 +14,17 @@
     --primary_bg_color: rgb(233, 245, 245);
     --box-shadow: rgba(7, 7, 7, 0.1) 0px 10px 50px;
     --skewmorphism_color: #F5F7F7;
+    --white_color:white;
     --skewmorphism_shadow: -4px -4px 14px 0px #F5F7F7;
     --basic_bottom_right_shadow: 4px 2px 4px 0px rgba(0, 0, 0, 25%);
     --small_padding: 16px 64px;
+    --border_radius:16px;
+    --border_radius_indide:8px;
     --main_padding_section: 64px 64px;
     --my_heading-font-family: 'Roboto Condensed', sans-serif;
     --my_paragraph-font-family: 'Kanit', sans-serif, 'Roboto Condensed', sans-serif;
     --gradient_color: to bottom right, #e9f0f5, hsl(0, 0%, 100%);
-    --hover_gradient:to bottom right, #FF0000, #0000FF;
+    --hover_gradient:to bottom right,#5d64bb,#ac3dbb, #db52b2;
 
 }
 
@@ -68,6 +71,7 @@ nav ul {
 header ul li:hover{
     border-bottom: 2px solid var(--teritiary_color);
     cursor: pointer;
+    color:var(--teritiary_color);
 }
 #right_side_nav_content{
     display: flex;
@@ -91,7 +95,7 @@ header ul li:hover{
  
     font-size: 20px;
 } */
-button{
+.medim_btn,#hire_me_btn{
     background:linear-gradient( var(--gradient_color));
     color:var(--teritiary_color);
     font-size: 16px;
@@ -102,16 +106,17 @@ button{
     border: none;
     gap: 8px;
     padding: 16px 20px;
-    border-radius: 8px;
+    border-radius: var(--border_radius_indide);
     cursor: pointer;
     font-weight: 800;
     box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
 
 
 }
-button:hover,#hire_me_btn:hover{
+.medim_btn:hover,#hire_me_btn:hover{
     background: linear-gradient(var(--hover_gradient));
-    color: white;
+        color: var(--white_color);
+
 }
 #hire_me_btn{
     font-size: 32px;
@@ -123,6 +128,7 @@ button:hover,#hire_me_btn:hover{
 
 .main_section{
     padding: var(--main_padding_section);
+    border-bottom: 1px solid var(--gray_main_color);
 }
 #allHelloContentContainer{
     padding: var(--small_padding);
@@ -137,7 +143,7 @@ button:hover,#hire_me_btn:hover{
 #top_content,#download_section{
     background:linear-gradient( var(--gradient_color));
     padding: 24px;
-    border-radius: 16px;
+    border-radius: var(--border_radius);
     box-shadow: var(--box-shadow);
     box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
 }
@@ -149,7 +155,7 @@ button:hover,#hire_me_btn:hover{
 #hero_image_container{
     background:linear-gradient(var(--gradient_color));
     padding: 24px;
-    border-radius: 16px;
+    border-radius:var(--border_radius);
     box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
 
 }
@@ -234,15 +240,188 @@ justify-content: space-between;
     padding-bottom: 64px;
 }
 
-.experience_content_container{
+.experience_content_container,.Education_content_container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background:linear-gradient(var(--gradient_color));
     padding: 24px;
-    border-radius: 16px;
+    border-radius: var(--border_radius);
+    box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
+
 }
 
 .image_container img{
-    max-width: 300px;
+  max-width: 400px;
+  max-height: 200px;
 }
+.image_container img:hover{
+    transform: scale(1.05);
+}
+
+.left_content_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+.small_container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.small_btn{
+    padding: 8px !important;
+    background-color: var(--teritiary_color) !important;
+    color: var(--white_color) !important;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 900;
+    width: 160px;
+}
+.card_experince_container,.card_education_container{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+}
+
+/*===========Tabs section ===============
+==================================================*/
+.big_btn_container{
+    background:linear-gradient( var(--gradient_color));
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: none;
+    gap: 0px;
+    
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
+
+}
+.big_btn_container .big_btn{
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    padding: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--primary_color);
+}
+.big_btn_container .big_btn:hover{
+    background:linear-gradient( var(--gradient_color));
+    border: none;
+    border-radius: var(--border_radius);
+    color:var(--teritiary_color);
+    cursor: pointer;
+    box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
+}
+
+.cards-resume_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 32px;
+}
+.cards-resume_container .left_side_cards_container ,.right_side_cards_container{
+padding: 24px 0px;
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.cards-resume_container .left_side_cards_container .card,.right_side_cards_container .card{
+    padding:40px 32px;
+    background:linear-gradient( var(--gradient_color));
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 16px;
+    box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
+
+}
+
+.cards-resume_container .left_side_cards_container .card:hover,.right_side_cards_container .card:hover{
+    background: linear-gradient(var(--hover_gradient));
+        color: var(--white_color);
+
+}
+
+.left_inside_card{
+    display: grid;
+    grid-template-columns: 4fr 1fr;  
+}
+.left_inside_card h1:hover,p:hover{
+    color: var(--white_color);
+}
+.left_inside_card div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.left_inside_card .medim_btn{
+   height: 24px;
+   max-width:80px;
+}
+
+
+
+/*=========== BLOG SECTION ===============
+==================================================*/
+
+.card_blogs_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+.card_blogs_container .card_blog{
+    background: linear-gradient(var(--gradient_color));
+    padding: 24px;
+    border-radius: var(--border_radius);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: -4px -4px 14px 0px #F5F7F7, var(--box-shadow);
+
+}
+
+.card_blogs_container .card_blog img{
+    width:max-content;
+    height: 250px;
+    border-radius: var(--border_radius_indide);
+}
+.card_blogs_container .card_blog img:hover{
+    transform: scale(1.03);
+}
+
+.small_title_container{
+    display: flex;
+    justify-content: space-between;
+}
+.right_content_inside_card_title{
+    display: flex;
+    gap: 8px;
+}
+.card_blog p{
+    font-size: 24px;
+}
+
+.card_blog p:hover{
+    color: var(--teritiary_color);
+}
+
+.d_none{
+    display: none;
+}
+.card_blog p:hover .d_none{
+    display: inline;
+ 
+}
+.card_blog p:hover .d_none svg{
+    transform: scale(1.9);
+    transition-duration: 1s;
+    margin-left: 5px;
+}
+
+
+/*===========CONTACT WITH ME SECTION===============
+==================================================*/
