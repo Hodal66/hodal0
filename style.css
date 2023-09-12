@@ -25,12 +25,17 @@
     --my_paragraph-font-family: 'Kanit', sans-serif, 'Roboto Condensed', sans-serif;
     --gradient_color: to bottom right, #e9f0f5, hsl(0, 0%, 100%);
     --hover_gradient:to bottom right,#5d64bb,#ac3dbb, #db52b2;
+    --transition_small:all 0.9s ease-in-out ;
+    --transition_big:all 1.5s ease-in-out;
 
 }
 
 body {
     background-color: var(--primary_bg_color);
     color: var(--primary_color);
+}
+html{
+    scroll-behavior: smooth;
 }
 
 /*============Header Section==============
@@ -46,6 +51,13 @@ h6 {
 p {
     font-family: var(--my_paragraph-font-family);
     color: var(--paragraph_color);
+}
+a{
+    text-decoration: none;
+    color: var(--primary_color);
+}
+a:hover{
+    color: var(--teritiary_color);
 }
 header {
     display: flex;
@@ -116,6 +128,9 @@ header ul li:hover{
 .medim_btn:hover,#hire_me_btn:hover{
     background: linear-gradient(var(--hover_gradient));
         color: var(--white_color);
+        transition: var(--transition_small);
+    cursor: pointer;
+
 
 }
 #hire_me_btn{
@@ -150,7 +165,7 @@ header ul li:hover{
 
 #top_content:hover,#download_section:hover{
     transform: scale(1.08,1.02);
-    transition-delay: 100ms;
+    transition: var(--transition_small);
 }
 #hero_image_container{
     background:linear-gradient(var(--gradient_color));
@@ -164,6 +179,9 @@ width: 700px;
 }
 #hero_image_container img:hover{
 transform: scale(1.009);
+transition:var(--transition_small);
+cursor: pointer;
+
 }
 .hero_icon{
     background-color: var(--teritiary_color);
@@ -218,10 +236,6 @@ justify-content: space-between;
 /*===========Experience_section ===============
 ==================================================*/
 
-#Experience_section{
-
-}
-
 .heading_container{
     display: flex;
     flex-direction: column;
@@ -257,6 +271,9 @@ justify-content: space-between;
 }
 .image_container img:hover{
     transform: scale(1.05);
+    transition: var(--transition_small);
+    cursor: pointer;
+
 }
 
 .left_content_container{
@@ -343,6 +360,8 @@ gap: 24px;
 .cards-resume_container .left_side_cards_container .card:hover,.right_side_cards_container .card:hover{
     background: linear-gradient(var(--hover_gradient));
         color: var(--white_color);
+    cursor: pointer;
+
 
 }
 
@@ -391,6 +410,9 @@ gap: 24px;
 }
 .card_blogs_container .card_blog img:hover{
     transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
 }
 
 .small_title_container{
@@ -418,19 +440,16 @@ gap: 24px;
 }
 .card_blog p:hover .d_none svg{
     transform: scale(1.9);
-    transition-duration: 1s;
     margin-left: 5px;
-    transition: transform 0.9s ease;
+    transition:var(--transition_small);
+    cursor: pointer;
+
 
 }
 
 
 /*===========CONTACT WITH ME SECTION===============
 ==================================================*/
-#contact_us{
-  
-}
-
 .contact_us_content_container{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -451,6 +470,11 @@ gap: 24px;
     width: 400px;
     height: 250px;
     border-radius: var(--border_radius_indide);
+}
+.contact_us_content_container aside img:hover{
+    transform: scale(1.03);
+    transition: var(--transition_small);
+    cursor: pointer;
 }
 .form_container{
     background:linear-gradient(var(--gradient_color));
@@ -504,5 +528,7 @@ gap: 24px;
 .icon_container:hover{
 background: linear-gradient(var(--hover_gradient));
 transform: matrix3d(0.866, 0.5, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-transition: transform 0.9s ease;
+transition:var(--transition_small);
+cursor: pointer;
+
 }
